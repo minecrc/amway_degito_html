@@ -1,0 +1,51 @@
+@import '../Common/variables.less';
+
+.mz-cart-value-row {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: @spacing[xs];
+  }
+
+  &.--red {
+    color: @colors[red-200];
+  }
+
+  &.--grey {
+    color: @colors[grey-300];
+  }
+
+  &__nested-area {
+    width: @spacing[m];
+    line-height: 1;
+  }
+
+  &__title {
+    flex: 1;
+    margin-right: @spacing[xs];
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      margin-right: @spacing[s];
+    }
+  }
+
+  &.--no-title-mobile &__title {
+    display: none;
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: block;
+    }
+  }
+
+  &__remove-button {
+    display: block;
+    color: @colors[grey-300];
+
+    @media (hover: hover) {
+      &:hover {
+        color: @colors[grey-400];
+      }
+    }
+  }
+}
